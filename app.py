@@ -25,8 +25,7 @@ class Dealer(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     email = db.Column(db.String(80), unique=True, nullable=False)
-    created_at = db.Column(db.DateTime(timezone=True),
-                           server_default=func.now())
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     desc = db.Column(db.Text)
     cars = db.relationship('Car', backref='dealer')
 
@@ -45,8 +44,7 @@ class Car(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     model_name = db.Column(db.String(100), nullable=False)
     color = db.Column(db.String(100), nullable=False)
-    created_at = db.Column(db.DateTime(timezone=True),
-                           server_default=func.now())
+    created_at = db.Column(db.DateTime(timezone=True), server_default=func.now())
     dealer_id = db.Column(db.Integer, db.ForeignKey('dealer.id'))
 
     def __repr__(self):
@@ -77,9 +75,7 @@ def create():
         name = request.form['name']
         email = request.form['email']
         desc = request.form['desc']
-        dealer = Dealer(name=name,
-                        email=email,
-                        desc=desc)
+        dealer = Dealer(name=name, email=email, desc=desc)
         db.session.add(dealer)
         db.session.commit()
 
@@ -152,9 +148,7 @@ def car_create():
         model_name = request.form['model_name']
         color = request.form['color']
         dealer_id = request.form['dealer_id']
-        car = Car(model_name=model_name,
-                  color=color,
-                  dealer_id=dealer_id)
+        car = Car(model_name=model_name, color=color, dealer_id=dealer_id)
         db.session.add(car)
         db.session.commit()
 
@@ -196,4 +190,4 @@ def car_delete(car_id):
 if __name__ == '__main__':
     app.debug = True
     db.create_all()
-    app.run()
+    app.run(host='127.0.0.1', port=5005)

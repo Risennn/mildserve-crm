@@ -7,6 +7,6 @@ ENV PROJECT_DIR /app
 COPY . /${PROJECT_DIR}
 WORKDIR ${PROJECT_DIR}
 
-RUN pipenv install --system --deploy
+RUN pipenv install --system --deploy --ignore-pipfile
 
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=5005"]

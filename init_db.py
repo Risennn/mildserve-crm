@@ -1,5 +1,4 @@
-from app import db, Car
-from dealer import Dealer
+from app import db, Car, Dealer
 
 dealer1 = Dealer(name='Yellow Dealer', email='123@example.com', desc='sample text 1')
 dealer2 = Dealer(name='Green Dealer', email='456@example.com', desc='sample text 2')
