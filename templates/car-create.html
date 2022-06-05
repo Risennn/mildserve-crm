@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="width: 100%">{% block title %} Add a New Car {% endblock %}</h1>
+    <form method="post">
+        <p>
+            <label for="model_name">Model Name</label>
+            <input type="text" name="model_name"
+                   placeholder="Model Name">
+            </input>
+        </p>
+
+        <p>
+            <label for="color">Color</label>
+            <input type="text" name="color"
+                   placeholder="Color">
+            </input>
+        </p>
+
+        <p>
+            <label for="dealer_id">Dealer</label>
+            <select name="dealer_id">
+                {% for dealer in dealers %}
+                <option value="{{ dealer.id }}" SELECTED>{{ dealer.name }}</option>
+                {% endfor %}
+            </select>
+        </p>
+
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock %}

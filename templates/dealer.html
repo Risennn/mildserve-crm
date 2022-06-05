@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <span class="title">
+        <h1>{% block title %} {{ dealer.name }}{% endblock %}</h1>
+    </span>
+    <div class="content">
+            <div class="dealer">
+                <p><b>#{{ dealer.id }}</b></p>
+                <b>
+                    <p class="name">{{ dealer.name }}</p>
+                </b>
+                <p>{{ dealer.email }}</p>
+                <p>Joined: {{ dealer.created_at }}</p>
+                <div class="desc">
+                    <h4>Description</h4>
+                    <p>{{ dealer.desc }}</p>
+                </div>
+            </div>
+    </div>
+{% endblock %}

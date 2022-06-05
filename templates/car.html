@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <span class="title">
+        <h1>{% block title %} {{ car.model_name }}{% endblock %}</h1>
+    </span>
+    <div class="content">
+            <div class="car">
+                <p><b>#{{ car.id }}</b></p>
+                <b>
+                    <p class="name">{{ car.model_name }}</p>
+                </b>
+                <p>{{ car.color }}</p>
+                <p>{{ car.dealer_id }}</p>
+                <p>Added: {{ car.created_at }}</p>
+            </div>
+    </div>
+{% endblock %}
