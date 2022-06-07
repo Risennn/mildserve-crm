@@ -36,4 +36,4 @@ def create():
 @dealers_api_bp.get('/dealers/<int:dealer_id>/')
 def dealer(dealer_id):
     dealer = Dealer.query.get_or_404(dealer_id)
-    return jsonify(dealer, dealer=dealer), http.HTTPStatus.OK
+    return jsonify(dealer), http.HTTPStatus.OK
