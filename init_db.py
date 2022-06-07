@@ -1,4 +1,7 @@
-from app import db, Car, Dealer
+from models.car import Car
+from models.dealer import Dealer
+
+from extensions import db
 
 dealer1 = Dealer(name='Yellow Dealer', email='123@example.com', desc='sample text 1')
 dealer2 = Dealer(name='Green Dealer', email='456@example.com', desc='sample text 2')
