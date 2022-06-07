@@ -48,3 +48,9 @@ def create():
     db.session.commit()
 
     return jsonify(car), http.HTTPStatus.CREATED
+
+
+@cars_api_bp.route('/cars/<int:car_id>/')
+def car(car_id):
+    car = Car.query.get_or_404(car_id)
+    return jsonify(car), http.HTTPStatus.OK

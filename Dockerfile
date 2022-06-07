@@ -1,6 +1,4 @@
-# syntax=docker/dockerfile:1
-
-FROM python:3.8-slim-buster
+FROM python:3.10-slim-buster
 
 RUN pip3 install pipenv
 ENV PROJECT_DIR /app
@@ -9,4 +7,6 @@ WORKDIR ${PROJECT_DIR}
 
 RUN pipenv install --system --deploy --ignore-pipfile
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "--port=5005"]
+EXPOSE 5005
+
+CMD [ "flask", "run", "--host=0.0.0.0", "--port=5005"]

@@ -27,7 +27,7 @@ def create():
 
         return redirect(url_for('general_bp.index'))
 
-    return render_template('cars/car-create.html', dealers=dealers)
+    return render_template('cars/create.html', dealers=dealers)
 
 
 @cars_bp.route('/cars/<int:car_id>/edit/', methods=('GET', 'POST'))
@@ -49,7 +49,7 @@ def edit(car_id):
 
         return redirect(url_for('general_bp.index'))
 
-    return render_template('cars/car-edit.html', car=car, dealers=dealers)
+    return render_template('cars/edit.html', car=car, dealers=dealers)
 
 
 @cars_bp.post('/cars/<int:car_id>/delete/')

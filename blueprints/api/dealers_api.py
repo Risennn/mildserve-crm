@@ -31,3 +31,9 @@ def create():
     db.session.add(dealer)
     db.session.commit()
     return jsonify(dealer), http.HTTPStatus.CREATED
+
+
+@dealers_api_bp.get('/dealers/<int:dealer_id>/')
+def dealer(dealer_id):
+    dealer = Dealer.query.get_or_404(dealer_id)
+    return jsonify(dealer, dealer=dealer), http.HTTPStatus.OK
