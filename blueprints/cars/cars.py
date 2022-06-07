@@ -20,7 +20,7 @@ def create():
     if request.method == 'POST':
         model_name = request.form['model_name']
         color = request.form['color']
-        dealer_id = request.form['dealer_id']
+        dealer_id = request.form.get('dealer_id')
         car = Car(model_name=model_name, color=color, dealer_id=dealer_id)
         db.session.add(car)
         db.session.commit()
