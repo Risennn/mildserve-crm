@@ -41,10 +41,11 @@
 
         nav a {
             color: #d64161;
-            font-size: 3em;
+            font-size: 2em;
             margin-left: 50px;
             text-decoration: none;
         }
+
         nav {
             background-color: #f3f3f3;
         }
@@ -53,19 +54,26 @@
             display: flex;
             padding: 5px;
         }
+
+        .button {
+            border: solid;
+            padding: 5px;
+            display: inline-block;
+            vertical-align: super;
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="/">
-            <img alt="Dealers & Cars CRM" src="/static/images/cooltext412445108188431.gif" width=353" height="47">
-        </a>
-        <a href="/dealers/create">Add Dealer</a>
-        <a href="/cars/create">Add Car</a>
-    </nav>
-    <hr>
-    <div class="content">
-        {% block content %} {% endblock %}
-    </div>
+<nav>
+    <a href="/">
+        <img alt="Dealers & Cars CRM" src="/static/images/cooltext412445108188431.gif" width=353" height="47">
+    </a>
+    <a class="button" href="/dealers/create">Add Dealer</a>
+    <a class="button" href="/cars/create">Add Car</a>
+</nav>
+<hr>
+<div class="content">
+    {% block content %} {% endblock %}
+</div>
 </body>
 </html>
