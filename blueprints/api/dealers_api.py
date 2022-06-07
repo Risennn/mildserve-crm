@@ -21,7 +21,7 @@ def delete(dealer_id):
     return '', http.HTTPStatus.NO_CONTENT
 
 
-@dealers_api_bp.route('/dealers/')
+@dealers_api_bp.post('/dealers/')
 def create():
     body = request.get_json()
     name = body.get('name')
